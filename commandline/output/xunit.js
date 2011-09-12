@@ -132,7 +132,11 @@
 				print('Tests: ' + globalTestCounter 
 					+ ', Assertions: ' + total 
 					+ ', Failures: ' + (failures - globalErrorCounter)
-					+ ', Errors: ' + globalErrorCounter);                
+					+ ', Errors: ' + globalErrorCounter);
+				
+				if (FuncUnit.failOnError) {
+					java.lang.System.exit(1);
+				}
 			} else {
 				print("\n" + 'OK (' + globalTestCounter + ' tests, ' + total + ' assertions)');
 			}
