@@ -41,3 +41,12 @@ test("Back to back opens with hash", function(){
 		return text === "Change";
 	});
 })
+
+test('Testing win.confirm in multiple pages', function() {
+	S.open('//funcunit/test/open/first.html');
+	S('.next').click();
+
+	S('.show-confirm').click();
+	S.confirm(true);
+	S('.results').text('confirmed!');
+})
